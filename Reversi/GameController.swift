@@ -133,13 +133,11 @@ class GameController {
     }
     
     func aiMove() {
-        //bart
         print("inside the aiMove()")
-        
-        let move = self.strategist.bestMoveForActivePlayer() as! Move
-        //let move = self.strategist.bestMove(for: gameModel.activePlayer!) as! Move
-        
-        self.performMove(move.x, move.y)
+        if let move = self.strategist.bestMoveForActivePlayer() as? Move {
+            self.performMove(move.x, move.y)
+        }
+        return
     }
     
     func performMove (_ x: Int, _ y: Int) {
@@ -164,7 +162,7 @@ class GameController {
             gameModel.currentPlayer = gameModel.currentPlayer.oppositePlayer
             print("New current player is \(gameModel.currentPlayer.disk)")
             if (gameModel.currentPlayer.name == "AI") {
-                print("before aiMove()")
+                print("now in func performMove(), before aiMove()")
                 aiMove()
             } else {
                 print("show available moves for human")
