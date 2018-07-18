@@ -211,8 +211,6 @@ class GameController {
         drawBoard()
         updateScore()
         printBoard()
-        //flipDisk(4, 5)
-        //alertGameOver()
         
         if(playerSide == .black) {
             gameModel.currentPlayer.name = "HUMAN"

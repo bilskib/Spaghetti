@@ -45,10 +45,10 @@ class GameModel: NSObject, GKGameModel {
     
     func gameModelUpdates(for player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
         let player = player as! Player
-        //var moves: [Move] = Move.createMoves(board: self.gameBoard, player)
+        var moves: [Move] = Move.createMoves(board: self.gameBoard, player)
         
-        var moves = [Move]()
-        moves = Move.createMoves(board: self.gameBoard, player)
+        //var moves = [Move]()
+        //moves = Move.createMoves(board: self.gameBoard, player)
         
         //moves.append(Move(x:5, y: 5))
         if moves.isEmpty {
